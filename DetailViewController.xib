@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailViewController">
@@ -18,29 +19,88 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6yO-RY-xZw">
-                    <rect key="frame" x="13" y="149" width="97" height="30"/>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6yO-RY-xZw">
+                    <rect key="frame" x="8" y="97" width="177" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UY6-ZI-guJ">
-                    <rect key="frame" x="13" y="206" width="240" height="128"/>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UY6-ZI-guJ">
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="128" id="DoV-Kf-Kx8"/>
+                    </constraints>
                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="DoV-Kf-Kx8"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=compact">
+                        <mask key="constraints">
+                            <include reference="DoV-Kf-Kx8"/>
+                        </mask>
+                    </variation>
                 </textView>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xwf-wL-P1n">
-                    <rect key="frame" x="216" y="148" width="37" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xwf-wL-P1n">
+                    <rect key="frame" x="216" y="97" width="37" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="37" id="0Jq-1H-rWX"/>
+                    </constraints>
                     <state key="normal" title="Clear">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="0Jq-1H-rWX"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=compact">
+                        <mask key="constraints">
+                            <include reference="0Jq-1H-rWX"/>
+                        </mask>
+                    </variation>
                     <connections>
                         <action selector="clear:" destination="-1" eventType="touchUpInside" id="bs4-cR-944"/>
                     </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Xwf-wL-P1n" firstAttribute="leading" secondItem="6yO-RY-xZw" secondAttribute="trailing" constant="25" id="0Tv-rU-vRX"/>
+                <constraint firstItem="6yO-RY-xZw" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" id="107-cx-16z"/>
+                <constraint firstItem="UY6-ZI-guJ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="13" id="Epp-rC-LQf"/>
+                <constraint firstItem="6yO-RY-xZw" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="97" id="IBU-Dv-ISS"/>
+                <constraint firstAttribute="trailing" secondItem="Xwf-wL-P1n" secondAttribute="trailing" constant="17" id="bVB-8r-xhQ"/>
+                <constraint firstItem="Xwf-wL-P1n" firstAttribute="trailing" secondItem="UY6-ZI-guJ" secondAttribute="trailing" id="f9D-al-KM1"/>
+                <constraint firstItem="UY6-ZI-guJ" firstAttribute="top" secondItem="6yO-RY-xZw" secondAttribute="bottom" constant="16" id="nAe-KK-oTa"/>
+                <constraint firstItem="6yO-RY-xZw" firstAttribute="top" secondItem="Xwf-wL-P1n" secondAttribute="top" id="zLs-ef-lIu"/>
+            </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="107-cx-16z"/>
+                    <exclude reference="IBU-Dv-ISS"/>
+                    <exclude reference="zLs-ef-lIu"/>
+                    <exclude reference="Epp-rC-LQf"/>
+                    <exclude reference="nAe-KK-oTa"/>
+                    <exclude reference="0Tv-rU-vRX"/>
+                    <exclude reference="bVB-8r-xhQ"/>
+                    <exclude reference="f9D-al-KM1"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=regular-widthClass=compact">
+                <mask key="constraints">
+                    <include reference="107-cx-16z"/>
+                    <include reference="IBU-Dv-ISS"/>
+                    <include reference="zLs-ef-lIu"/>
+                    <include reference="Epp-rC-LQf"/>
+                    <include reference="nAe-KK-oTa"/>
+                    <include reference="0Tv-rU-vRX"/>
+                    <include reference="bVB-8r-xhQ"/>
+                    <include reference="f9D-al-KM1"/>
+                </mask>
+            </variation>
         </view>
     </objects>
 </document>
