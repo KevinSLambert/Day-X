@@ -7,11 +7,14 @@
 //
 
 #import "DetailViewController.h"
+#import "Entry.h"
 
 @interface DetailViewController () <UITextFieldDelegate, UITextViewDelegate>
-@property (weak, nonatomic) IBOutlet UITextField *textField;
-@property (weak, nonatomic) IBOutlet UITextView *textView;
-@property (weak, nonatomic) IBOutlet UIButton *button;
+
+@property (strong, nonatomic) IBOutlet UITextField *textField;
+@property (strong, nonatomic) IBOutlet UITextView *textView;
+@property (strong, nonatomic) IBOutlet UIButton *button;
+@property (nonatomic, strong) Entry *entry;
 
 @end
 
@@ -21,11 +24,43 @@
     [super viewDidLoad];
     
     self.textField.delegate = self;
+    self.textView.delegate = self;
+    
+    UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(save:)];
+    self.navigationItem.rightBarButtonItem = saveButton;
     // Do any additional setup after loading the view from its nib.
 }
+
 - (IBAction)clear:(id)sender {
     self.textView.text = nil;
     self.textField.text = nil;
+    
+    [self save:sender];
+}
+
+
+-(void)textFieldDidEndEditing:(UITextField *)textField {
+    [self save:textField];
+}
+
+-(void)textViewDidChange:(UITextView *)textView {
+    [self save:textView];
+}
+
+-(void)save:(id)sender {
+    
+    if (!self.entry) {
+        self.entry = [Entry new];
+        self.entry.title = self.textField.text;
+        self.entry.text = self.textView.text;
+    }
+    
+    NSMutableArray *entries = [Entry loadEntriesFromDefaults];
+    [entries addObject:self.entry];
+    
+    [Entry storeEntriesInDefaults:entries];
+    
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {

@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		30B4EEC11A66163800ECB1BF /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B4EEBF1A66163800ECB1BF /* DetailViewController.m */; };
 		30B4EEC21A66163800ECB1BF /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30B4EEC01A66163800ECB1BF /* DetailViewController.xib */; };
+		30B4EECD1A6A215E00ECB1BF /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B4EECC1A6A215E00ECB1BF /* ListViewController.m */; };
+		30B4EED01A6A22BD00ECB1BF /* ListTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B4EECF1A6A22BD00ECB1BF /* ListTableViewDataSource.m */; };
+		30B4EED31A6A236600ECB1BF /* Entry.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B4EED21A6A236600ECB1BF /* Entry.m */; };
 		711A506A19388095005642EF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 711A506919388095005642EF /* Foundation.framework */; };
 		711A506C19388095005642EF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 711A506B19388095005642EF /* CoreGraphics.framework */; };
 		711A506E19388095005642EF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 711A506D19388095005642EF /* UIKit.framework */; };
@@ -37,6 +40,12 @@
 		30B4EEBE1A66163800ECB1BF /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailViewController.h; path = ../DetailViewController.h; sourceTree = "<group>"; };
 		30B4EEBF1A66163800ECB1BF /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailViewController.m; path = ../DetailViewController.m; sourceTree = "<group>"; };
 		30B4EEC01A66163800ECB1BF /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DetailViewController.xib; path = ../DetailViewController.xib; sourceTree = "<group>"; };
+		30B4EECB1A6A215E00ECB1BF /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
+		30B4EECC1A6A215E00ECB1BF /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
+		30B4EECE1A6A22BD00ECB1BF /* ListTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListTableViewDataSource.h; sourceTree = "<group>"; };
+		30B4EECF1A6A22BD00ECB1BF /* ListTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListTableViewDataSource.m; sourceTree = "<group>"; };
+		30B4EED11A6A236600ECB1BF /* Entry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Entry.h; sourceTree = "<group>"; };
+		30B4EED21A6A236600ECB1BF /* Entry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Entry.m; sourceTree = "<group>"; };
 		711A506619388095005642EF /* DayX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DayX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		711A506919388095005642EF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		711A506B19388095005642EF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -117,6 +126,12 @@
 				30B4EEBE1A66163800ECB1BF /* DetailViewController.h */,
 				30B4EEBF1A66163800ECB1BF /* DetailViewController.m */,
 				30B4EEC01A66163800ECB1BF /* DetailViewController.xib */,
+				30B4EECB1A6A215E00ECB1BF /* ListViewController.h */,
+				30B4EECC1A6A215E00ECB1BF /* ListViewController.m */,
+				30B4EECE1A6A22BD00ECB1BF /* ListTableViewDataSource.h */,
+				30B4EECF1A6A22BD00ECB1BF /* ListTableViewDataSource.m */,
+				30B4EED11A6A236600ECB1BF /* Entry.h */,
+				30B4EED21A6A236600ECB1BF /* Entry.m */,
 				711A507B19388095005642EF /* Images.xcassets */,
 				711A507019388095005642EF /* Supporting Files */,
 			);
@@ -249,8 +264,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30B4EED31A6A236600ECB1BF /* Entry.m in Sources */,
+				30B4EED01A6A22BD00ECB1BF /* ListTableViewDataSource.m in Sources */,
 				711A507A19388095005642EF /* DXAppDelegate.m in Sources */,
 				711A507619388095005642EF /* main.m in Sources */,
+				30B4EECD1A6A215E00ECB1BF /* ListViewController.m in Sources */,
 				30B4EEC11A66163800ECB1BF /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
