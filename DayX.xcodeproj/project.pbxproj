@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		302F0CE51A6AF01400F828B3 /* EntryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 302F0CE41A6AF01400F828B3 /* EntryController.m */; };
 		30B4EEC11A66163800ECB1BF /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B4EEBF1A66163800ECB1BF /* DetailViewController.m */; };
 		30B4EEC21A66163800ECB1BF /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30B4EEC01A66163800ECB1BF /* DetailViewController.xib */; };
 		30B4EECD1A6A215E00ECB1BF /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B4EECC1A6A215E00ECB1BF /* ListViewController.m */; };
@@ -37,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		302F0CE31A6AF01400F828B3 /* EntryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntryController.h; sourceTree = "<group>"; };
+		302F0CE41A6AF01400F828B3 /* EntryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntryController.m; sourceTree = "<group>"; };
 		30B4EEBE1A66163800ECB1BF /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailViewController.h; path = ../DetailViewController.h; sourceTree = "<group>"; };
 		30B4EEBF1A66163800ECB1BF /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailViewController.m; path = ../DetailViewController.m; sourceTree = "<group>"; };
 		30B4EEC01A66163800ECB1BF /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DetailViewController.xib; path = ../DetailViewController.xib; sourceTree = "<group>"; };
@@ -132,6 +135,8 @@
 				30B4EECF1A6A22BD00ECB1BF /* ListTableViewDataSource.m */,
 				30B4EED11A6A236600ECB1BF /* Entry.h */,
 				30B4EED21A6A236600ECB1BF /* Entry.m */,
+				302F0CE31A6AF01400F828B3 /* EntryController.h */,
+				302F0CE41A6AF01400F828B3 /* EntryController.m */,
 				711A507B19388095005642EF /* Images.xcassets */,
 				711A507019388095005642EF /* Supporting Files */,
 			);
@@ -268,6 +273,7 @@
 				30B4EED01A6A22BD00ECB1BF /* ListTableViewDataSource.m in Sources */,
 				711A507A19388095005642EF /* DXAppDelegate.m in Sources */,
 				711A507619388095005642EF /* main.m in Sources */,
+				302F0CE51A6AF01400F828B3 /* EntryController.m in Sources */,
 				30B4EECD1A6A215E00ECB1BF /* ListViewController.m in Sources */,
 				30B4EEC11A66163800ECB1BF /* DetailViewController.m in Sources */,
 			);

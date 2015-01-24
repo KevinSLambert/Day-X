@@ -7,7 +7,7 @@
 //
 
 #import "ListTableViewDataSource.h"
-#import "Entry.h"
+#import "EntryController.h"
 
 @implementation ListTableViewDataSource
 
@@ -22,12 +22,11 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    NSArray *entries = [Entry loadEntriesFromDefaults];
-    Entry *entry = entries[indexPath.row];
-    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([UITableViewCell class])];
+    
+    Entry *entry = [EntryController sharedInstance].entries[indexPath.row];
     cell.textLabel.text = entry.title;
+    
     return cell;
 }
 

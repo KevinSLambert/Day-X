@@ -9,6 +9,7 @@
 #import "ListViewController.h"
 #import "DetailViewController.h"
 #import "ListTableViewDataSource.h"
+#import "EntryController.h"
 
 @interface ListViewController () <UITableViewDelegate>
 
@@ -18,6 +19,12 @@
 @end
 
 @implementation ListViewController
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [self.tableView reloadData];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -32,12 +39,16 @@
     
     self.tableView.dataSource = self.dataSource;
     self.tableView.delegate = self;
-    [self.dataSource registerTableView:self.tableView];
 
+    [self.dataSource registerTableView:self.tableView];
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    DetailViewController *detailViewController = [DetailViewController new];
+    [detailViewController updateWithEntry:[EntryController sharedInstance].entries[indexPath.row]];
+    [self.navigationController pushViewController:detailViewController animated:YES];
 }
 
 - (void)add:(id)sender {

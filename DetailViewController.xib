@@ -81,11 +81,11 @@
             </constraints>
             <variation key="default">
                 <mask key="constraints">
+                    <exclude reference="S2s-gA-R4g"/>
+                    <exclude reference="lpN-nB-3JH"/>
                     <exclude reference="Bge-cV-UcY"/>
                     <exclude reference="Q0M-lb-EDI"/>
                     <exclude reference="jB0-c1-Abw"/>
-                    <exclude reference="S2s-gA-R4g"/>
-                    <exclude reference="lpN-nB-3JH"/>
                     <exclude reference="Lb2-20-rsp"/>
                     <exclude reference="ddZ-la-1c7"/>
                     <exclude reference="hKK-V3-B57"/>
@@ -93,11 +93,11 @@
             </variation>
             <variation key="heightClass=regular-widthClass=compact">
                 <mask key="constraints">
+                    <include reference="S2s-gA-R4g"/>
+                    <include reference="lpN-nB-3JH"/>
                     <include reference="Bge-cV-UcY"/>
                     <include reference="Q0M-lb-EDI"/>
                     <include reference="jB0-c1-Abw"/>
-                    <include reference="S2s-gA-R4g"/>
-                    <include reference="lpN-nB-3JH"/>
                     <include reference="Lb2-20-rsp"/>
                     <include reference="ddZ-la-1c7"/>
                     <include reference="hKK-V3-B57"/>

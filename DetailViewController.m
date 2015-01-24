@@ -7,7 +7,7 @@
 //
 
 #import "DetailViewController.h"
-#import "Entry.h"
+#import "EntryController.h"
 
 @interface DetailViewController () <UITextFieldDelegate, UITextViewDelegate>
 
@@ -20,13 +20,23 @@
 
 @implementation DetailViewController
 
+- (void)updateWithEntry:(Entry *)entry {
+    self.entry = entry;
+    
+    self.textField.text = entry.title;
+    self.textView.text = entry.text;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.textField.delegate = self;
     self.textView.delegate = self;
     
-    UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(save:)];
+    self.textField.text = self.entry.title;
+    self.textView.text = self.entry.text;
+    
+    UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithTitle:@"Save" style:UIBarButtonItemStylePlain target:self action:@selector(save:)];
     self.navigationItem.rightBarButtonItem = saveButton;
     // Do any additional setup after loading the view from its nib.
 }
@@ -34,33 +44,22 @@
 - (IBAction)clear:(id)sender {
     self.textView.text = nil;
     self.textField.text = nil;
-    
-    [self save:sender];
 }
 
-
--(void)textFieldDidEndEditing:(UITextField *)textField {
-    [self save:textField];
-}
-
--(void)textViewDidChange:(UITextView *)textView {
-    [self save:textView];
-}
 
 -(void)save:(id)sender {
     
-    if (!self.entry) {
-        self.entry = [Entry new];
-        self.entry.title = self.textField.text;
-        self.entry.text = self.textView.text;
+    Entry *entry = [[Entry alloc] initWithDictionary: @{titleKey: self.textField.text, textKey: self.textView.text}];
+    
+    if (self.entry) {
+        [[EntryController sharedInstance] replaceEntry:self.entry withEntry:entry];
+    }
+    else {
+        [[EntryController sharedInstance] addEntry:entry];
     }
     
-    NSMutableArray *entries = [Entry loadEntriesFromDefaults];
-    [entries addObject:self.entry];
-    
-    [Entry storeEntriesInDefaults:entries];
-    
     [self.navigationController popViewControllerAnimated:YES];
+    
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
