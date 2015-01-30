@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3089FF471A7B27BD007CC43B /* Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = 3089FF461A7B27BD007CC43B /* Stack.m */; };
+		3089FF491A7B2800007CC43B /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3089FF481A7B2800007CC43B /* CoreData.framework */; };
+		3089FF4C1A7B2845007CC43B /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3089FF4A1A7B2845007CC43B /* Model.xcdatamodeld */; };
+		3089FF4F1A7B2ACF007CC43B /* Entry.m in Sources */ = {isa = PBXBuildFile; fileRef = 3089FF4E1A7B2ACF007CC43B /* Entry.m */; };
 		711A506A19388095005642EF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 711A506919388095005642EF /* Foundation.framework */; };
 		711A506C19388095005642EF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 711A506B19388095005642EF /* CoreGraphics.framework */; };
 		711A506E19388095005642EF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 711A506D19388095005642EF /* UIKit.framework */; };
@@ -19,7 +23,6 @@
 		711A508519388096005642EF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 711A506D19388095005642EF /* UIKit.framework */; };
 		711A508D19388096005642EF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 711A508B19388096005642EF /* InfoPlist.strings */; };
 		711A508F19388096005642EF /* DayXTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 711A508E19388096005642EF /* DayXTests.m */; };
-		71247D1B19CCE96600E2BFA2 /* Entry.m in Sources */ = {isa = PBXBuildFile; fileRef = 71247D1A19CCE96600E2BFA2 /* Entry.m */; };
 		7160740219CADDA500D730CF /* EntryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7160740119CADDA500D730CF /* EntryController.m */; };
 		7160740519CAE03C00D730CF /* DXListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7160740419CAE03C00D730CF /* DXListViewController.m */; };
 		7160740819CAE06500D730CF /* DXListTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 7160740719CAE06500D730CF /* DXListTableViewDataSource.m */; };
@@ -38,6 +41,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3089FF451A7B27BD007CC43B /* Stack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stack.h; sourceTree = "<group>"; };
+		3089FF461A7B27BD007CC43B /* Stack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stack.m; sourceTree = "<group>"; };
+		3089FF481A7B2800007CC43B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		3089FF4B1A7B2845007CC43B /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		3089FF4D1A7B2ACF007CC43B /* Entry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Entry.h; path = ../Entry.h; sourceTree = "<group>"; };
+		3089FF4E1A7B2ACF007CC43B /* Entry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Entry.m; path = ../Entry.m; sourceTree = "<group>"; };
 		711A506619388095005642EF /* DayX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DayX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		711A506919388095005642EF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		711A506B19388095005642EF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -54,8 +63,6 @@
 		711A508A19388096005642EF /* DayXTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DayXTests-Info.plist"; sourceTree = "<group>"; };
 		711A508C19388096005642EF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		711A508E19388096005642EF /* DayXTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DayXTests.m; sourceTree = "<group>"; };
-		71247D1919CCE96600E2BFA2 /* Entry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Entry.h; sourceTree = "<group>"; };
-		71247D1A19CCE96600E2BFA2 /* Entry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Entry.m; sourceTree = "<group>"; };
 		7160740019CADDA500D730CF /* EntryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntryController.h; sourceTree = "<group>"; };
 		7160740119CADDA500D730CF /* EntryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntryController.m; sourceTree = "<group>"; };
 		7160740319CAE03C00D730CF /* DXListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXListViewController.h; sourceTree = "<group>"; };
@@ -72,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3089FF491A7B2800007CC43B /* CoreData.framework in Frameworks */,
 				711A506C19388095005642EF /* CoreGraphics.framework in Frameworks */,
 				711A506E19388095005642EF /* UIKit.framework in Frameworks */,
 				711A506A19388095005642EF /* Foundation.framework in Frameworks */,
@@ -113,6 +121,7 @@
 		711A506819388095005642EF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3089FF481A7B2800007CC43B /* CoreData.framework */,
 				711A506919388095005642EF /* Foundation.framework */,
 				711A506B19388095005642EF /* CoreGraphics.framework */,
 				711A506D19388095005642EF /* UIKit.framework */,
@@ -124,10 +133,13 @@
 		711A506F19388095005642EF /* DayX */ = {
 			isa = PBXGroup;
 			children = (
+				3089FF451A7B27BD007CC43B /* Stack.h */,
+				3089FF461A7B27BD007CC43B /* Stack.m */,
+				3089FF4A1A7B2845007CC43B /* Model.xcdatamodeld */,
+				3089FF4D1A7B2ACF007CC43B /* Entry.h */,
+				3089FF4E1A7B2ACF007CC43B /* Entry.m */,
 				711A507819388095005642EF /* DXAppDelegate.h */,
 				711A507919388095005642EF /* DXAppDelegate.m */,
-				71247D1919CCE96600E2BFA2 /* Entry.h */,
-				71247D1A19CCE96600E2BFA2 /* Entry.m */,
 				7160740019CADDA500D730CF /* EntryController.h */,
 				7160740119CADDA500D730CF /* EntryController.m */,
 				7160740319CAE03C00D730CF /* DXListViewController.h */,
@@ -269,10 +281,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3089FF471A7B27BD007CC43B /* Stack.m in Sources */,
 				7160740819CAE06500D730CF /* DXListTableViewDataSource.m in Sources */,
 				711A507A19388095005642EF /* DXAppDelegate.m in Sources */,
-				71247D1B19CCE96600E2BFA2 /* Entry.m in Sources */,
+				3089FF4F1A7B2ACF007CC43B /* Entry.m in Sources */,
 				711A507619388095005642EF /* main.m in Sources */,
+				3089FF4C1A7B2845007CC43B /* Model.xcdatamodeld in Sources */,
 				7160740219CADDA500D730CF /* EntryController.m in Sources */,
 				7160740519CAE03C00D730CF /* DXListViewController.m in Sources */,
 				71B57C4919C758CB00EF6AE3 /* DXDetailViewController.m in Sources */,
@@ -484,6 +498,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3089FF4A1A7B2845007CC43B /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3089FF4B1A7B2845007CC43B /* Model.xcdatamodel */,
+			);
+			currentVersion = 3089FF4B1A7B2845007CC43B /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 711A505E19388095005642EF /* Project object */;
 }

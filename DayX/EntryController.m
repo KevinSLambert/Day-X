@@ -7,6 +7,8 @@
 //
 
 #import "EntryController.h"
+#import "Stack.h"
+#import <CoreData/CoreData.h>
 
 static NSString * const entryListKey = @"entryList";
 
@@ -24,79 +26,44 @@ static NSString * const entryListKey = @"entryList";
     dispatch_once(&onceToken, ^{
         sharedInstance = [[EntryController alloc] init];
         
-        [sharedInstance loadFromDefaults];
     });
     return sharedInstance;
 }
 
-- (void)addEntry:(Entry *)entry {
-
-    if (!entry) {
-        return;
-    }
+-(void)addEntryWithTitle: (NSString *)title andText:(NSString *)text {
     
-    NSMutableArray *mutableEntries = [[NSMutableArray alloc] initWithArray:self.entries];
-    [mutableEntries addObject:entry];
-    
-    self.entries = mutableEntries;
+    Entry *newEntry = [NSEntityDescription insertNewObjectForEntityForName:@"Entry" inManagedObjectContext:[Stack sharedInstance].managedObjectContext];
+                       
+    newEntry.title = title;
+    newEntry.text = text;
+    newEntry.timestamp = [NSDate date];
+                       
     [self synchronize];
+    
 }
-
+                       
 - (void)removeEntry:(Entry *)entry {
-
-    if (!entry) {
-        return;
-    }
     
-    NSMutableArray *mutableEntries = self.entries.mutableCopy;
-    [mutableEntries removeObject:entry];
+    [[Stack sharedInstance].managedObjectContext deleteObject:entry];
     
-    self.entries = mutableEntries;
     [self synchronize];
-
-}
-
-- (void)replaceEntry:(Entry *)oldEntry withEntry:(Entry *)newEntry {
-
-    if (!oldEntry || !newEntry) {
-        return;
-    }
-    
-    NSMutableArray *mutableEntries = self.entries.mutableCopy;
-    
-    if ([mutableEntries containsObject:oldEntry]) {
-        NSInteger index = [mutableEntries indexOfObject:oldEntry];
-        [mutableEntries replaceObjectAtIndex:index withObject:newEntry];
-    }
-    
-    self.entries = mutableEntries;
-    [self synchronize];
-
     
 }
 
-- (void)loadFromDefaults {
+
+- (NSArray *)entries {
     
-    NSArray *entryDictionaries = [[NSUserDefaults standardUserDefaults] objectForKey:entryListKey];
+    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Entry"];
     
-    NSMutableArray *entries = [NSMutableArray new];
-    for (NSDictionary *entry in entryDictionaries) {
-        [entries addObject:[[Entry alloc] initWithDictionary:entry]];
-    }
+    NSArray *allEntries = [[Stack sharedInstance].managedObjectContext executeFetchRequest:fetchRequest error:NULL];
     
-    self.entries = entries;
+    return allEntries;
     
 }
 
 - (void)synchronize {
     
-    NSMutableArray *entryDictionaries = [NSMutableArray new];
-    for (Entry *entry in self.entries) {
-        [entryDictionaries addObject:[entry entryDictionary]];
-    }
-    
-    [[NSUserDefaults standardUserDefaults] setObject:entryDictionaries forKey:entryListKey];
-    [[NSUserDefaults standardUserDefaults] synchronize];
+    [[Stack sharedInstance].managedObjectContext save:NULL];
     
 }
 
